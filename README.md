@@ -1,21 +1,21 @@
 # Lost in Transcription: Underlining, Meaning, and the Limits of Handwritten Text Recognition in Norwegian Personal Letters
 
-Code and data repository for a bachelor thesis in Archival and Information Science, OsloMet, 2026.
+Code and data repository for a bachelor thesis in Archival Science, OsloMet, 2026.
 
-This repository contains the detection scripts, letter images, XML transcriptions, ground truth annotations, and results used to investigate whether vision-based multimodal AI can detect underlining omitted from HTR transcriptions of Norwegian handwritten personal letters.
+This repository contains the detection scripts, ground truth annotations, and results used to investigate whether vision-based multimodal AI can detect underlining omitted from HTR transcriptions of Norwegian handwritten personal letters.
 
 ## Dataset
 
-Letters are drawn from the **NorHand dataset**, published openly by the National Library of Norway.
+Letters are drawn from the **NorHand dataset**, published openly by the National Library of Norway. The letter images and XML transcriptions are not included in this repository due to file size constraints. They can be downloaded directly from:
 
 - **Citation:** Maarand et al. (2022). https://doi.org/10.5281/zenodo.10255840
 - **Licence:** Creative Commons Attribution (CC-BY)
 
+Once downloaded, place the letter images and XML files in `letter-analyser/Letters/` to run the detection scripts.
+
 ## Repository Structure
 
 ```
-├── letter-analyser/
-│   └── Letters/                    # Letter images (.jpg) and PAGE XML transcriptions (.xml)
 ├── analyse_letters_claude.py       # Detection script — Claude Opus 4.7 (Anthropic)
 ├── compare_results.py              # Compares detection results against ground truth
 ├── convert_groundtruth.py          # Converts ground truth spreadsheet to JSON
@@ -27,7 +27,6 @@ Letters are drawn from the **NorHand dataset**, published openly by the National
 ├── detection_results.xlsx          # Detection results summary and per-letter breakdown
 ├── ground_truth_styled.xlsx        # Manual annotation ground truth (styled)
 ├── charts.xlsx                     # Score distribution visualisations
-├── worst_performing/               # The 5 worst-performing letters for analysis
 ├── requirements.txt                # Python dependencies
 ├── LICENSE                         # CC-BY 4.0 licence
 └── README.md                       # This file
@@ -112,5 +111,5 @@ Detection scripts were developed with coding assistance from Claude Sonnet 4.6 (
 ## Author
 
 Fiona Vonholm
-Bachelor thesis in Archival Science
+Bachelor in Archival Science
 OsloMet, 2026
