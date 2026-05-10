@@ -23,10 +23,6 @@ Once downloaded, place the letter images and XML files in `letter-analyser/Lette
 ├── ground_truth.json               # Manual annotation ground truth (JSON)
 ├── results_claude.json             # Detection results from Claude Opus 4.7
 ├── comparison_claude.json          # Accuracy comparison against ground truth
-├── combined_results.xlsx           # Ground truth and detection results combined
-├── detection_results.xlsx          # Detection results summary and per-letter breakdown
-├── ground_truth_styled.xlsx        # Manual annotation ground truth (styled)
-├── charts.xlsx                     # Score distribution visualisations
 ├── requirements.txt                # Python dependencies
 ├── LICENSE                         # CC-BY 4.0 licence
 └── README.md                       # This file
@@ -40,13 +36,25 @@ Detection was performed using **Claude Opus 4.7** (`claude-opus-4-7`) by Anthrop
 
 ## Results
 
-Detection against 89 manually annotated underlinings across 40 letters:
+Detection against 89 manually annotated underlinings across 40 letters.
+
+**Full sample (40 letters):**
 
 | Metric | Score |
 |--------|-------|
 | Precision | 0.725 |
 | Recall | 0.742 |
 | F1 Score | 0.733 |
+
+**Adjusted sample (37 letters):**
+
+Three documents were excluded as outliers due to exceptional visual complexity documented during manual annotation: significant verso ink bleed (fisx001_1), heavy decorative flourishes throughout (fgab001_2), and a single underlining visually indistinguishable from the handwriting baseline (no-nb_digimanus_21565_0001). The adjusted figures represent model performance on standard documents without these exceptional challenges.
+
+| Metric | Score |
+|--------|-------|
+| Precision | 0.769 |
+| Recall | 0.833 |
+| F1 Score | 0.800 |
 
 18 of 40 letters (45%) achieved perfect detection (F1 = 1.0).
 
